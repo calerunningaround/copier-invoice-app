@@ -14,13 +14,15 @@ body {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-input, select, button {
+input, select, button, a {
   width: 100%;
   padding: 10px;
   margin: 8px 0;
   border: 1px solid #ccc;
   border-radius: 6px;
   font-size: 16px;
+  text-decoration: none;
+  display: block;
 }
 
 button {
@@ -28,17 +30,19 @@ button {
   color: white;
   border: none;
   cursor: pointer;
-  font-size: 18px;
 }
 
 button:hover {
   background: #005a87;
 }
 
-#result {
-  margin-top: 20px;
-  padding: 15px;
-  background: #f0f8ff;
-  border-radius: 8px;
-  display: none;
+a {
+  background: #2e8b57;
+  color: white;
+  text-align: center;
+  border-radius: 6px;
+}
+
+a:hover {
+  background: #1e5b3a;
 }

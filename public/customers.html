@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Manage Customers</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="box">
+    <h1>🧑‍💼 Customer & Copier Manager</h1>
+    <a href="/">← Back to Invoice</a>
+
+    <form id="customerForm">
+      <h2>Add/Edit Customer</h2>
+      <input type="text" id="customerName" placeholder="Customer Name" required>
+      <button type="submit">💾 Save Customer</button>
+      <hr>
+      <div id="copiersList"></div>
+      <button type="button" onclick="addCopier()">➕ Add Copier</button>
+    </form>
+
+    <hr>
+    <h2>All Customers</h2>
+    <div id="customers"></div>
+  </div>
+
+  <script src="customers.js"></script>
+</body>
+</html>

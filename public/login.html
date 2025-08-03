@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <style>
+    body { font-family: Arial; text-align: center; padding: 50px; background: #f0f8ff; }
+    .box { max-width: 400px; margin: 0 auto; padding: 30px; background: white; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    input, button { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #ccc; border-radius: 6px; font-size: 16px; }
+    button { background: #007cba; color: white; border: none; cursor: pointer; }
+    button:hover { background: #005a87; }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <h1>🔐 Admin Login</h1>
+    <input type="password" id="password" placeholder="Enter password">
+    <button onclick="login()">Login</button>
+    <p id="error" style="color: red; margin-top: 10px;"></p>
+  </div>
+
+  <script>
+    async function login() {
+      const pw = document.getElementById('password').value;
+      const res = await fetch('/api/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ password: pw })
+      });
+
+      if (res.ok) {
+        const { token } = await res.json();
+        localStorage.setItem('authToken', token);
+        location.href = '/';
+      } else {
+        document.getElementById('error').textContent = '❌ Wrong password!';
+      }
+    }
+  </script>
+</body>
+</html>

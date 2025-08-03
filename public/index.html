@@ -7,49 +7,34 @@
 <body>
   <div class="box">
     <h1>🖨️ Copier Invoice Maker</h1>
+    <a href="customers.html">📁 Manage Customers</a>
 
-    <form id="form">
-      <h2>🧑 Customer</h2>
-      <input placeholder="Name" id="customerName" required>
+    <h2>📅 Select Month & Year</h2>
+    <select id="month" required>
+      <option value="">Month</option>
+      <option>January</option>
+      <option>February</option>
+      <option>March</option>
+      <option>April</option>
+      <option>May</option>
+      <option>June</option>
+      <option>July</option>
+      <option>August</option>
+      <option>September</option>
+      <option>October</option>
+      <option>November</option>
+      <option>December</option>
+    </select>
+    <input type="number" id="year" value="2025" min="2020" max="2030" placeholder="Year" required>
 
-      <input placeholder="Copier Model" id="copierModel" required>
+    <h2>🧑 Select Customer</h2>
+    <select id="customerSelect" required></select>
+    <button type="button" onclick="loadCopiers()">🔍 Load Copiers</button>
 
-      <select id="month" required>
-        <option value="">Month</option>
-        <option>January</option>
-        <option>February</option>
-        <option>March</option>
-        <option>April</option>
-        <option>May</option>
-        <option>June</option>
-        <option>July</option>
-        <option>August</option>
-        <option>September</option>
-        <option>October</option>
-        <option>November</option>
-        <option>December</option>
-      </select>
-
-      <input type="number" placeholder="Year" id="year" value="2025" required>
-
-      <h2>📊 Meter Readings</h2>
-      <input type="number" placeholder="B&W Copies" id="bwReading" required>
-      <input type="number" placeholder="Color Copies" id="colorReading" required>
-      <input type="number" placeholder="Spoil Copies (optional)" id="spoilCopies">
-
-      <h2>💰 Rates & Rental</h2>
-      <input type="number" placeholder="Rental Fee" id="rentalFee" step="0.01" required>
-      <input type="number" placeholder="B&W Rate" id="bwRate" step="0.01" required>
-      <input type="number" placeholder="Color Rate" id="colorRate" step="0.01" required>
-      <input type="number" placeholder="Free B&W Copies" id="freeBw" required>
-      <input type="number" placeholder="Free Color Copies" id="freeColor" required>
-      <input type="number" placeholder="Min Usage Charge" id="minUsageCharge" step="0.01" required>
-
-      <button type="submit">✅ Make Invoice</button>
-    </form>
-
+    <div id="copiersForm"></div>
     <div id="result"></div>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>

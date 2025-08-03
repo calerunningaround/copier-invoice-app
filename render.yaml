@@ -1,0 +1,13 @@
+services:
+  - type: web
+    name: copier-invoice-app
+    runtime: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: ADMIN_PASSWORD
+        fromSecret: ADMIN_PASSWORD
+      - key: RESEND_API_KEY
+        fromSecret: RESEND_API_KEY
+      - key: FROM_EMAIL
+        value: "Copier App <invoice@yourdomain.com>"
